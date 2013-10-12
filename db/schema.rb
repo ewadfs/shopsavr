@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011202244) do
+ActiveRecord::Schema.define(version: 20131012045316) do
 
   create_table "pins", force: true do |t|
     t.string   "description"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20131011202244) do
     t.string   "name"
     t.string   "provider"
     t.string   "uid"
+    t.date     "birthday"
+    t.string   "sex"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
