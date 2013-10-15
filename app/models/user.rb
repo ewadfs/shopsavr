@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :registerable, 
          :rememberable, 
          :trackable, 
+         :recoverable,
          :validatable, 
          :omniauthable, 
          :omniauth_providers => [:facebook]
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :birthday, :sex, :address, :mobile, :provider, :uid
 
   has_many :pins, :dependent => :destroy
-
+has_many :boards, :dependent => :destroy
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user

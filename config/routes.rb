@@ -1,4 +1,6 @@
 Omrails::Application.routes.draw do
+  resources :boards
+ 
   resources :pins
 
   get 'about' => "pages#about"
@@ -7,7 +9,7 @@ Omrails::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :tests, :birthdays
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   # You can have the root of your site routed with "root"
@@ -33,7 +35,8 @@ Omrails::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  map.root :controller => "boards" 
+  resources :tests, :birthdays
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

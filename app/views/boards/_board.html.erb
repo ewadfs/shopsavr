@@ -1,0 +1,15 @@
+<div class="box">
+  
+    <p class="description">
+        <%= board.description %>
+    </p>
+    <p>
+
+    </p>
+    <% if current_user == board.user %>
+        <p>
+          <%= link_to 'Edit', edit_board_path(board) %>
+          <%= link_to 'Destroy', board, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+    <% end %>
+</div>
