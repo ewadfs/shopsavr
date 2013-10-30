@@ -10,6 +10,7 @@
 
                 <div class="nav-collapse">
                     <ul class="nav">
+                  
                         <li>
                             <%= link_to 'Home',  root_path %>
                         </li>
@@ -17,7 +18,17 @@
                             <%= link_to 'About',  about_path %>
                         </li>
                     </ul>
+                    <ul class="nav center">
+
+                                           <%= form_tag pins_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+</ul>
+<% end %>
                     <ul class="nav pull-right">
+
                         <% if user_signed_in? %>
                         <li><%= link_to 'Boards',  boards_path %></li>
                         <li><%= link_to 'Add +',  new_pin_path %></li>

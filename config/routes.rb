@@ -1,4 +1,6 @@
 Omrails::Application.routes.draw do
+  get "static_pages/tos"
+  get "static_pages/privacy"
   resources :boards
  
   resources :pins
@@ -35,7 +37,7 @@ Omrails::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  map.root :controller => "boards" 
+
   resources :tests, :birthdays
   # Example resource route with sub-resources:
   #   resources :products do

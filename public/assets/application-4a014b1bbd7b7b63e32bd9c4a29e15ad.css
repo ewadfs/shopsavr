@@ -70,7 +70,6 @@ sup {
 sup {
   top: -0.5em; }
 
-sub {
   bottom: -0.25em; }
 
 img {
@@ -454,6 +453,11 @@ a:hover {
 [class*="span"].pull-right,
 .row-fluid [class*="span"].pull-right {
   float: right; }
+
+[class*="span"].center,
+.row-fluid [class*="span"].center {
+  float: center; }
+
 
 .container {
   margin-right: auto;

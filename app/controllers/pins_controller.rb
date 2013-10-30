@@ -6,6 +6,10 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+
+  end
+   def header
+         @pins = Pin.search(params)
   end
 
   # GET /pins/1
